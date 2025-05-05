@@ -1,5 +1,7 @@
 print("Welcome to Honors Chemistry Review! You are at the quizzes page!")
 import sys
+global decision
+decision = input("What would you like to do? \n (2)" 
 global chapter question
 chapterquestion = int(input(
     "What chapter would you like to review? \n"
@@ -176,3 +178,4 @@ def questions123 ():
     ))
 questions123()
 nextsteps()
+
