@@ -1,20 +1,27 @@
 print("Welcome to Honors Chemistry Review! You are at the quizzes page!")
 import sys
+def quizdatabase ():
+    quizdatabase1 = []
+    print (quizdatabase1)
 global decision
-decision = input("What would you like to do? \n (2)" 
-global chapter question
-chapterquestion = int(input(
-    "What chapter would you like to review? \n"
-    "(1) Chapter 6 - Functional Groups and Covalent Bonding \n"
-    "(2) Chapter 13 - Toxins \n"
-    "(3) Chapter 14 - Mole Conversions \n"
-    "(4) Chapter 17 - Stoichiometry \n"
-    "(5) Chapter 10-12 - Gas Laws and Weather \n"
-    "(6) Chapter 15-16 - Ocean Acidification \n"
-))
-
+decision = input("What would you like to do? \n (1) See your quizzes database \n (2) Take a new quiz \n (3) Go to Home")
+if decision == "1":
+    quizdatabase ()
+if decision == "2":
+    global chapter question
+    chapterquestion = int(input(
+        "What chapter would you like to review? \n"
+        "(1) Chapter 6 - Functional Groups and Covalent Bonding \n"
+        "(2) Chapter 13 - Toxins \n"
+        "(3) Chapter 14 - Mole Conversions \n"
+        "(4) Chapter 17 - Stoichiometry \n"
+        "(5) Chapter 10-12 - Gas Laws and Weather \n"
+        "(6) Chapter 15-16 - Ocean Acidification \n"
+    ))
+if decision == "3":
+    import sys.exit()
 def nextsteps ():
-    nextstep = input ("What would you like to do now? \n (1) Take a quiz again \n (2) Go to home page")
+    nextstep = input ("What would you like to do? \n (1) See your quizzes database \n (2) Take a new quiz \n (3) Go to Home")
     if nextstep == "1":
         chapterquestion = int(input(
             "What chapter would you like to review? \n"
@@ -145,26 +152,33 @@ def questions123 ():
         for q, ans in chapter6_questions:
             ask_question(q, ans)
         print(f"Your score is {score} out of 10, which is {score * 10} %")
+        quizdatabase1.append (f"Score: {score}/10")
     elif chapterquestion == 2:
         for q, ans in chapter13_questions:
             ask_question(q,ans)
         print(f"Your score is {score} out of 10, which is {score *10} %")
+        quizdatabase1.append (f"Score: {score}/10")
     elif chapterquestion == 3:
         for q, ans in chapter14_questions:
             ask_question(q,ans)
         print(f"Your score is {score} out of 10, which is {score *10} %")
+        quizdatabase1.append (f"Score: {score}/10")
     elif chapterquestion == 4:
         for q, ans in chapter17_questions:
             ask_question(q,ans)
         print(f"Your score is {score} out of 10, which is {score *10} %")
+        quizdatabase1.append (f"Score: {score}/10")
     elif chapterquestion == 5:
         for q, ans in chapter10_12_questions:
             ask_question(q,ans)
         print(f"Your score is {score} out of 10, which is {score *10} %")
+        quizdatabase1.append (f"Score: {score}/10")
     elif chapterquestion == 6:
         for q, ans in chapter15_16_questions:
             ask_question(q,ans)
         print(f"Your score is {score} out of 10, which is {score *10} %")
+        quizdatabase1.append (f"Score: {score}/10")
+
     else:
         print ("Please type in a valid response")
         chapterquestion = int(input(
