@@ -1,0 +1,178 @@
+print("Welcome to Honors Chemistry Review! You are at the quizzes page!")
+import sys
+global chapter question
+chapterquestion = int(input(
+    "What chapter would you like to review? \n"
+    "(1) Chapter 6 - Functional Groups and Covalent Bonding \n"
+    "(2) Chapter 13 - Toxins \n"
+    "(3) Chapter 14 - Mole Conversions \n"
+    "(4) Chapter 17 - Stoichiometry \n"
+    "(5) Chapter 10-12 - Gas Laws and Weather \n"
+    "(6) Chapter 15-16 - Ocean Acidification \n"
+))
+
+def nextsteps ():
+    nextstep = input ("What would you like to do now? \n (1) Take a quiz again \n (2) Go to home page")
+    if nextstep == "1":
+        chapterquestion = int(input(
+            "What chapter would you like to review? \n"
+            "(1) Chapter 6 - Functional Groups and Covalent Bonding \n"
+            "(2) Chapter 13 - Toxins \n"
+            "(3) Chapter 14 - Mole Conversions \n"
+            "(4) Chapter 17 - Stoichiometry \n"
+            "(5) Chapter 10-12 - Gas Laws and Weather \n"
+            "(6) Chapter 15-16 - Ocean Acidification \n" ))
+        questions123()
+    elif nextstep == "2":
+        print ("Navigating to home page... ")
+        sys.exit()
+    else:
+        print ("Please type in a valid input")
+        nextsteps()
+score = 0
+
+def ask_question(prompt, correct_answer):
+    global score
+    answer = input(prompt + "\nYour answer: ").strip().upper()
+    if answer == correct_answer:
+        print("You are correct!")
+        score += 1
+    elif answer in ["A", "B", "C", "D"]:
+        print("Wrong!")
+    else:
+        print("Please type in a valid input.")
+        ask_question(prompt, correct_answer)
+
+# Questions for Chapter 6
+chapter6_questions = [
+    ("What rule helps understand the structural formula for covalent bonds?\n (A) INCH 2367\n (B) NOCH 1234\n (C) HONC 1234\n (D) HONC 1345", "C"),
+    ("Determine the functional group and smell of the molecule C2H7H:\n (A) Amine - Fishy\n (B) Ketone - Sweet\n (C) Amine - Minty\n (D) Ketone - Minty", "A"),
+    ("Which element in HONC 1234 typically forms 2 covalent bonds?\n (A) Hydrogen\n (B) Nitrogen\n (C) Oxygen\n (D) Carbon", "C"),
+    ("How many covalent bonds does nitrogen typically form?\n (A) 2\n (B) 4\n (C) 1\n (D) 3", "D"),
+    ("Which element typically forms 4 covalent bonds in HONC 1234?\n (A) Oxygen\n (B) Carbon\n (C) Nitrogen\n (D) Hydrogen", "B"),
+    ("What functional group contains a carbon double bonded to an oxygen?\n (A) Hydroxyl\n (B) Amino\n (C) Carbonyl\n (D) Carboxyl", "C"),
+    ("Which functional group is written as -OH?\n (A) Carboxyl\n (B) Hydroxyl\n (C) Methyl\n (D) Amino", "B"),
+    ("What element is associated with 1 covalent bond in HONC 1234?\n (A) Hydrogen\n (B) Oxygen\n (C) Carbon\n (D) Nitrogen", "A"),
+    ("Which functional group is found in amino acids and acts as a base?\n (A) Carboxyl\n (B) Phosphate\n (C) Amino\n (D) Sulfhydryl", "C"),
+    ("Which functional group behaves as an acid and donates H+?\n (A) Hydroxyl\n (B) Carboxyl\n (C) Amino\n (D) Methyl", "B"),
+]
+
+# Questions for Chapter 13
+chapter13_questions = [
+    ("What is the balanced equation for the neutralization of hydrochloric acid (a toxin) with sodium hydroxide?\n (A) HCl + NaOH → NaCl + H₂O\n (B) HCl + H₂O → NaOH + NaCl\n (C) NaOH → Na⁺ + OH⁻\n (D) HCl → H⁺ + Cl⁻",
+    "A"),
+
+    ("What is the product of the reaction between lead(II) nitrate and potassium iodide?\n (A) PbI₂ + KNO₃\n (B) Pb(NO₃)₂ + KI\n (C) Pb + I₂\n (D) PbO + KNO₃",
+    "A"),
+
+    ("Which of the following compounds is insoluble in water?\n (A) NaNO₃\n (B) PbSO₄\n (C) KCl\n (D) NH₄Br", "B"),
+
+    ( "Which ion is often responsible for forming toxic precipitates in water?\n (A) NO₃⁻\n (B) NH₄⁺\n (C) Pb²⁺\n (D) Na⁺",
+    "C"),
+
+    (   "Balance the following equation: ___Al + ___Cl₂ → ___AlCl₃\n (A) 2, 3, 2\n (B) 1, 1, 1\n (C) 3, 2, 2\n (D) 1, 3, 3",
+    "A"),
+
+    ("Which salt will form a precipitate when mixed with Na₂SO₄?\n (A) BaCl₂\n (B) KCl\n (C) NH₄NO₃\n (D) NaOH", "A"),
+
+    ( "What is the net ionic equation for the formation of lead(II) iodide from aqueous solutions?\n (A) Pb²⁺ + 2I⁻ → PbI₂(s)\n (B) Pb(NO₃)₂ + 2KI → PbI₂ + 2KNO₃\n (C) I⁻ + K⁺ → KI\n (D) Pb²⁺ + SO₄²⁻ → PbSO₄",
+    "A"),
+
+    ("Which of the following compounds is most likely to be toxic due to heavy metal content?\n (A) NaCl\n (B) Pb(NO₃)₂\n (C) KNO₃\n (D) CaCO₃",
+    "B"),
+
+    ("Which of the following reactions produces a toxic gas?\n (A) HCl + NaOH → NaCl + H₂O\n (B) H₂SO₄ + Na₂S → Na₂SO₄ + H₂S\n (C) NaCl + AgNO₃ → AgCl + NaNO₃\n (D) Ca(OH)₂ + CO₂ → CaCO₃ + H₂O",
+    "B"),
+
+    ("Which of the following solubility rules is correct?\n (A) All chlorides are insoluble\n (B) All nitrates are soluble\n (C) All sulfates are insoluble\n (D) All hydroxides are soluble",
+    "B")
+]
+
+chapter14_questions = [
+    ("How many moles are in 22.4 L of a gas at STP?\n (A) 1 mol\n (B) 2 mol\n (C) 0.5 mol\n (D) 4 mol", "A"),
+    ("What is the molar mass of H₂O?\n (A) 16 g/mol\n (B) 18 g/mol\n (C) 20 g/mol\n (D) 10 g/mol", "B"),
+    ("How many molecules are in 2 moles of CO₂?\n (A) 3.01×10²³\n (B) 6.02×10²³\n (C) 1.20×10²⁴\n (D) 1.00×10²³", "C"),
+    ("Convert 36 grams of water to moles:\n (A) 1 mol\n (B) 2 mol\n (C) 3 mol\n (D) 0.5 mol", "B"),
+    ("What is Avogadro's number?\n (A) 6.02×10²³\n (B) 3.14\n (C) 9.81 m/s²\n (D) 1.60×10⁻¹⁹", "A"),
+    ("What is the mass of 0.5 moles of NaCl (M = 58.5 g/mol)?\n (A) 58.5 g\n (B) 29.25 g\n (C) 116.0 g\n (D) 12.0 g", "B"),
+    ("How many atoms are in 3 moles of iron?\n (A) 1.81×10²⁴\n (B) 6.02×10²³\n (C) 9.03×10²³\n (D) 3.01×10²³", "A"),
+    ("What volume does 3 moles of gas occupy at STP?\n (A) 67.2 L\n (B) 22.4 L\n (C) 44.8 L\n (D) 6.02 L", "A"),
+    ("How many grams are in 2 moles of CO₂?\n (A) 22 g\n (B) 44 g\n (C) 88 g\n (D) 100 g", "C"),
+    ("What is the molar mass of Ca(OH)₂?\n (A) 56.1 g/mol\n (B) 74.1 g/mol\n (C) 40.1 g/mol\n (D) 90.1 g/mol", "B")
+]
+
+
+chapter17_questions = [
+    ("In 2H₂ + O₂ → 2H₂O, how many moles of water from 4 moles O₂?\n (A) 2\n (B) 4\n (C) 6\n (D) 8", "D"),
+    ("What is the mole ratio of N₂ to NH₃ in N₂ + 3H₂ → 2NH₃?\n (A) 1:1\n (B) 1:2\n (C) 1:3\n (D) 2:3", "B"),
+    ("1 mole CH₄ reacts with O₂, how many moles CO₂ form?\n (A) 1\n (B) 2\n (C) 0.5\n (D) 4", "A"),
+    ("What's needed for stoichiometry?\n (A) Balanced equation\n (B) Molar masses\n (C) Limiting reactant\n (D) Temperature", "D"),
+    ("Mole ratio for 2Na + Cl₂ → 2NaCl?\n (A) 1:2\n (B) 2:1\n (C) 2:2\n (D) 1:1", "C"),
+    ("In 2KClO₃ → 2KCl + 3O₂, how many moles O₂ from 4 mol KClO₃?\n (A) 2\n (B) 3\n (C) 6\n (D) 1", "C"),
+    ("How many grams in 2 moles of NaCl (M = 58.5 g/mol)?\n (A) 29.25 g\n (B) 117 g\n (C) 100 g\n (D) 88 g", "B"),
+    ("What is a limiting reactant?\n (A) Reactant that speeds up reaction\n (B) Reactant that runs out first\n (C) Product in excess\n (D) Reactant with smallest mass", "B"),
+    ("Theoretical yield is:\n (A) Actual lab amount\n (B) Predicted from stoichiometry\n (C) Maximum reactant\n (D) Product lost", "B"),
+    ("Percent yield = ?\n (A) Actual/Theoretical × 100\n (B) Theoretical/Actual × 100\n (C) Moles/Product × 100\n (D) Mass/Moles", "A")
+]
+chapter10_12_questions = [
+    ("Which law relates pressure and volume?\n (A) Boyle’s Law\n (B) Charles’ Law\n (C) Avogadro’s Law\n (D) Dalton’s Law", "A"),
+    ("Charles’ Law: Temp ↑ → Volume?\n (A) ↑\n (B) ↓\n (C) Same\n (D) Zero", "A"),
+    ("STP conditions:\n (A) 0°C, 1 atm\n (B) 25°C, 2 atm\n (C) 273 K, 760 mmHg\n (D) Both A & C", "D"),
+    ("P₁V₁/T₁ = P₂V₂/T₂ is:\n (A) Boyle’s\n (B) Combined Gas\n (C) Ideal Gas\n (D) Dalton’s", "B"),
+    ("Air component affecting weather:\n (A) O₂\n (B) Ar\n (C) H₂O vapor\n (D) N₂", "C"),
+    ("PV = nRT: R = ?\n (A) 0.0821\n (B) 1.00\n (C) 273\n (D) 760", "A"),
+    ("If temp ↑ and volume constant, pressure?\n (A) ↑\n (B) ↓\n (C) =\n (D) Zero", "A"),
+    ("Volume of 2 moles gas at STP?\n (A) 22.4 L\n (B) 44.8 L\n (C) 11.2 L\n (D) 33.6 L", "B"),
+    ("Which law uses partial pressures?\n (A) Boyle’s\n (B) Charles’\n (C) Dalton’s\n (D) Avogadro’s", "C"),
+    ("Weather pressure drop suggests:\n (A) Storm\n (B) Sunny\n (C) Fog\n (D) Wind stops", "A")
+]
+chapter15_16_questions = [
+    ("pH of neutral solution?\n (A) 0\n (B) 7\n (C) 14\n (D) 1", "B"),
+    ("Strong acid?\n (A) H₂CO₃\n (B) HCl\n (C) HF\n (D) NH₃", "B"),
+    ("A base typically:\n (A) Donates H⁺\n (B) Accepts H⁺\n (C) Releases CO₂\n (D) Neutral", "B"),
+    ("Amphoteric substance?\n (A) HCl\n (B) NaOH\n (C) H₂O\n (D) CH₄", "C"),
+    ("Neutralization makes:\n (A) Water + acid\n (B) Salt + water\n (C) H₂ gas\n (D) Base + gas", "B"),
+    ("Weak base?\n (A) NaOH\n (B) KOH\n (C) NH₃\n (D) HCl", "C"),
+    ("Which pH is basic?\n (A) 6\n (B) 5\n (C) 7\n (D) 9", "D"),
+    ("Bronsted-Lowry base is:\n (A) H⁺ donor\n (B) H⁺ acceptor\n (C) OH⁻ donor\n (D) Salt former", "B"),
+    ("Litmus turns red in:\n (A) Base\n (B) Water\n (C) Acid\n (D) Salt", "C"),
+    ("Acid rain pH is usually:\n (A) 7\n (B) 5.6\n (C) 9\n (D) 4.5", "B")
+]
+def questions123 ():
+    if chapterquestion == 1:
+        for q, ans in chapter6_questions:
+            ask_question(q, ans)
+        print(f"Your score is {score} out of 10, which is {score * 10} %")
+    elif chapterquestion == 2:
+        for q, ans in chapter13_questions:
+            ask_question(q,ans)
+        print(f"Your score is {score} out of 10, which is {score *10} %")
+    elif chapterquestion == 3:
+        for q, ans in chapter14_questions:
+            ask_question(q,ans)
+        print(f"Your score is {score} out of 10, which is {score *10} %")
+    elif chapterquestion == 4:
+        for q, ans in chapter17_questions:
+            ask_question(q,ans)
+        print(f"Your score is {score} out of 10, which is {score *10} %")
+    elif chapterquestion == 5:
+        for q, ans in chapter10_12_questions:
+            ask_question(q,ans)
+        print(f"Your score is {score} out of 10, which is {score *10} %")
+    elif chapterquestion == 6:
+        for q, ans in chapter15_16_questions:
+            ask_question(q,ans)
+        print(f"Your score is {score} out of 10, which is {score *10} %")
+    else:
+        print ("Please type in a valid response")
+        chapterquestion = int(input(
+            "What chapter would you like to review? \n"
+            "(1) Chapter 6 - Functional Groups and Covalent Bonding \n"
+            "(2) Chapter 13 - Toxins \n"
+            "(3) Chapter 14 - Mole Conversions \n"
+            "(4) Chapter 17 - Stoichiometry \n"
+            "(5) Chapter 10-12 - Gas Laws and Weather \n"
+            "(6) Chapter 15-16 - Ocean Acidification \n"
+    ))
+questions123()
+nextsteps()
